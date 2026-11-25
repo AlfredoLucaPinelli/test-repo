@@ -32,3 +32,40 @@ Connect and push:
 > git branch -M main
 > git push -u origin main
 After that, you can use gpush normally inside the folder.
+
+
+
+NOTE THAT gpush is a script
+
+
+#!/bin/zsh
+
+# gpush — stage all changes, commit, and push
+
+show_help() {
+  cat << EOF
+Usage: gpush "commit message"
+       gpush --help
+
+Stage all changes (git add .), commit with the given message, and push to the remote.
+
+Examples:
+  gpush "Update README with setup instructions"
+  gpush "Fix typo in homepage"
+  gpush "Add new contact form"
+
+Options:
+  --help     Show this help message
+EOF
+}
+
+# Handle help
+if [[ "$1" == "--help" || "$1" == "-h" || -z "$1" ]]; then
+  show_help
+  exit 0
+fi
+
+git add .
+git commit -m "$1"
+git push
+
