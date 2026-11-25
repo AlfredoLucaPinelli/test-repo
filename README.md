@@ -1,4 +1,4 @@
-# Hello from my Mac
+# BASIC INSTRUCTIONS TO COMMIT AND ADD FOLDERS
 
 To commit go to your local folder and use >gpush "memo"
 Memo is simply a memo about the changes you are committing
